@@ -1,6 +1,6 @@
 {
-  "name" : "OpenTok Screen Sharing",
-  "author": "TokBox, Inc.",
+  "name" : "OneRoom Screen Sharing",
+  "author": "OneRoom",
   "version" : "1.0",
   "manifest_version" : 2,
   "minimum_chrome_version": "34",
@@ -13,7 +13,7 @@
   "content_scripts": [ {
    "js": [ "content-script.js" ],
    "all_frames": true,
-   "matches": ["https://*.change-this-to-your-domain.com/*"]
+   "matches": ["https://*.joinoneroom.com/*", "https://localhost/*", "https://*/*"]
   }],
   "icons": {
     "16": "logo16.png",

@@ -1,6 +1,6 @@
 'use strict'
 
-var gDomains = ['*.example.com'];
+var gDomains = ['*.joinoneroom.com', 'localhost', '*', '*.ngrok.io'];
 var allowDomainsPrefKey = 'media.getusermedia.screensharing.allowed_domains';
 
 function startup(aData, aReason) {
