@@ -58,3 +58,7 @@ window.addEventListener('message', function (event) {
 
 // inform browser that you're available!
 window.postMessage(response('extensionLoaded'), '*');
+
+var isInstalledNode = document.createElement('div');
+isInstalledNode.id = 'oneroom-screensharing-opentok-extension-is-installed';
+document.body.appendChild(isInstalledNode);
