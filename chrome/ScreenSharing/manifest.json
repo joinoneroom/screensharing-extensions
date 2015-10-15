@@ -1,7 +1,7 @@
 {
   "name" : "OneRoom Screen Sharing",
   "author": "OneRoom",
-  "version" : "1.1",
+  "version" : "1.2",
   "manifest_version" : 2,
   "minimum_chrome_version": "34",
   "description" : "This Chrome extension enables screen sharing on http://joinoneroom.com/.",
@@ -13,7 +13,7 @@
   "content_scripts": [ {
    "js": [ "content-script.js" ],
    "all_frames": true,
-   "matches": ["https://*.joinoneroom.com/*"]
+   "matches": ["https://*.joinoneroom.com/*", "https://localhost/*", "https://*.ngrok.com/*", "https://*.ngrok.io/*"]
   }],
   "icons": {
     "16": "logo16.png",

@@ -59,6 +59,14 @@ window.addEventListener('message', function (event) {
 // inform browser that you're available!
 window.postMessage(response('extensionLoaded'), '*');
 
-var isInstalledNode = document.createElement('div');
-isInstalledNode.id = 'oneroom-screensharing-opentok-extension-is-installed';
-document.body.appendChild(isInstalledNode);
+var installedNodeId = 'oneroom-screensharing-opentok-extension-is-installed';
+var isInstalledNode = document.getElementById(installedNodeId);
+// Only mess with the page if we found the element that we expect. We do this,
+// because the easiest way to make a development-friendly version of this
+// extension is to allow it to run on localhost and ngrok.com domains, but we do
+// not want to mess with pages that are not expecting this extension to run on.
+if (isInstalledNode) {
+  var affirmativeNode = document.createElement('div');
+  affirmativeNode.setAttribute('data-type', 'chrome');
+  isInstalledNode.appendChild(affirmativeNode);
+}
