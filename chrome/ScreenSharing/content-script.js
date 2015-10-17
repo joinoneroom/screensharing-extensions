@@ -70,3 +70,7 @@ if (isInstalledNode) {
   affirmativeNode.setAttribute('data-type', 'chrome');
   isInstalledNode.appendChild(affirmativeNode);
 }
+
+// for first time load to prevent requiring page refresh
+// https://github.com/otalk/getScreenMedia/pull/9/files
+// sessionStorage.getScreenMediaJSExtensionId = chrome.runtime.id;
