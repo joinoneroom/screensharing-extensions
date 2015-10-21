@@ -72,5 +72,9 @@ if (isInstalledNode) {
 }
 
 // for first time load to prevent requiring page refresh
+// This is for AFTER the first time load. If the extension is NOT yet installed
+// then this session storage variable will NOT be set and is only set AFTER
+// successful installation. But if it IS already installed, we need this for
+// calling the background script chrome.runtime.sendMessage call.
 // https://github.com/otalk/getScreenMedia/pull/9/files
-// sessionStorage.getScreenMediaJSExtensionId = chrome.runtime.id;
+sessionStorage.getScreenMediaJSExtensionId = chrome.runtime.id;
