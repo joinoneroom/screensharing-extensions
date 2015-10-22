@@ -59,17 +59,6 @@ window.addEventListener('message', function (event) {
 // inform browser that you're available!
 window.postMessage(response('extensionLoaded'), '*');
 
-var installedNodeId = 'oneroom-screensharing-opentok-extension-is-installed';
-var isInstalledNode = document.getElementById(installedNodeId);
-// Only mess with the page if we found the element that we expect. We do this,
-// because the easiest way to make a development-friendly version of this
-// extension is to allow it to run on localhost and ngrok.com domains, but we do
-// not want to mess with pages that are not expecting this extension to run on.
-if (isInstalledNode) {
-  var affirmativeNode = document.createElement('div');
-  affirmativeNode.setAttribute('data-type', 'chrome');
-  isInstalledNode.appendChild(affirmativeNode);
-}
 
 // for first time load to prevent requiring page refresh
 // This is for AFTER the first time load. If the extension is NOT yet installed
@@ -77,4 +66,4 @@ if (isInstalledNode) {
 // successful installation. But if it IS already installed, we need this for
 // calling the background script chrome.runtime.sendMessage call.
 // https://github.com/otalk/getScreenMedia/pull/9/files
-sessionStorage.getScreenMediaJSExtensionId = chrome.runtime.id;
+sessionStorage.oneroomScreensharingOpentokExtensionId = chrome.runtime.id;
